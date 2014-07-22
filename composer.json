@@ -1,0 +1,30 @@
+{
+    "name": "ryannielson/prez",
+    "description": "Easily create presenters for your objects.",
+    "keywords": ["presenter", "decorator", "view", "model"],
+    "homepage": "https://github.com/RyanNielson/prez",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Nielson",
+            "email": "ryan@nielson.io",
+            "homepage": "http://nielson.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RyanNielson\\Prez\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "stable"
+}
