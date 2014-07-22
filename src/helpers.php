@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use RyanNielson\Heimdall\Heimdall;
+use RyanNielson\Prez\PresenterFinder;
 
 if (!function_exists('present'))
 {
-    function present($object, $method)
+    function presenter($object, $klass = null)
     {
-        return (new PresenterFinder($object))->presenter();
+        return (new PresenterFinder($object, $klass))->presenter();
     }
 }
