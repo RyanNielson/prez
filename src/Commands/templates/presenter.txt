@@ -1,0 +1,6 @@
+<?php
+
+class $NAME$Presenter extends RyanNielson\Prez\Presenter 
+{
+    protected $presents = '$CAMELNAME$';
+}

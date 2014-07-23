@@ -2,8 +2,8 @@
 
 use RyanNielson\Prez\Presenter;
 
-class PresenterTests extends PHPUnit_Framework_TestCase {
-
+class PresenterTests extends PHPUnit_Framework_TestCase
+{
     public function testGetValuesFromPresenter()
     {
         $presenter = new FooObjectPresenter(new FooObject);
@@ -29,9 +29,6 @@ class PresenterTests extends PHPUnit_Framework_TestCase {
         $this->assertEquals('bar BarObject', $presenter->label());
         $this->assertEquals('PHP', $presenter->language());
     }
-
-
-           
 }
 
 class FooObject

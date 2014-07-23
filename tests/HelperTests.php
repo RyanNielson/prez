@@ -1,7 +1,7 @@
 <?php
 
-class HelperTests extends PHPUnit_Framework_TestCase {
-
+class HelperTests extends PHPUnit_Framework_TestCase
+{
     public function testGetPresenterUsingObject()
     {
         $this->assertInstanceOf('FooHelperPresenter', presenter(new FooHelper));
@@ -18,7 +18,7 @@ class FooHelper
 }
 
 class BarHelper
-{  
+{
 }
 
 class FooHelperPresenter

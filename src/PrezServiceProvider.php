@@ -1,9 +1,11 @@
 <?php namespace RyanNielson\Prez;
 
+use Illuminate\Support\ClassLoader;
 use Illuminate\Support\ServiceProvider;
+use RyanNielson\Prez\Commands\PresenterCommand;
 
-class PrezServiceProvider extends ServiceProvider {
-
+class PrezServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -18,7 +20,7 @@ class PrezServiceProvider extends ServiceProvider {
      */
     public function boot()
     {
-        $this->package('ryannielson/prez');
+        $this->package('ryannielson/prez', null, __DIR__);
     }
 
     /**
@@ -28,7 +30,15 @@ class PrezServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        //
+        $this->app->bindShared('prez.commands.presenter', function($app) {
+            return new PresenterCommand($app['files']);
+        });
+
+        $this->commands('prez.commands.presenter');
+
+        ClassLoader::addDirectories([
+            app_path() . '/rules',
+        ]);
     }
 
     /**
@@ -40,5 +50,4 @@ class PrezServiceProvider extends ServiceProvider {
     {
         return array();
     }
-
 }

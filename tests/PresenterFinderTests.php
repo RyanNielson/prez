@@ -2,8 +2,8 @@
 
 use RyanNielson\Prez\PresenterFinder;
 
-class PresenterFinderTests extends PHPUnit_Framework_TestCase {
-
+class PresenterFinderTests extends PHPUnit_Framework_TestCase
+{
     public function testGetPresenterUsingObject()
     {
         $presenterFinder = new PresenterFinder(new Foo);
@@ -27,7 +27,7 @@ class PresenterFinderTests extends PHPUnit_Framework_TestCase {
     }
 }
 
-class Foo 
+class Foo
 {
 }
 
@@ -35,10 +35,10 @@ class Baz
 {
 }
 
-class FooPresenter 
+class FooPresenter
 {
 }
 
-class BarPresenter 
+class BarPresenter
 {
 }
