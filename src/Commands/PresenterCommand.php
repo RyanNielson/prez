@@ -3,6 +3,7 @@
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
 
 class PresenterCommand extends Command
 {
@@ -49,7 +50,7 @@ class PresenterCommand extends Command
     {
         $name = studly_case($this->argument('name'));
         $presenterName = "{$name}Presenter";
-        $destinationDirectory = app_path() . '/presenters';
+        $destinationDirectory = $this->option('path');
         $destination = "{$destinationDirectory}/{$presenterName}.php";
 
         $this->files->isDirectory($destinationDirectory) ?: $this->files->makeDirectory($destinationDirectory);
@@ -80,7 +81,9 @@ class PresenterCommand extends Command
      */
     protected function getOptions()
     {
-        return [];
+        return [
+            ['path', null, InputOption::VALUE_OPTIONAL, 'Where should the presenter be created?', app_path() . '/presenters']
+        ];
     }
 
     private function prepareTemplate($template, $data)
@@ -94,5 +97,4 @@ class PresenterCommand extends Command
 
         return $contents;
     }
-
 }
