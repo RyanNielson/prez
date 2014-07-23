@@ -1,15 +1,11 @@
 <?php namespace RyanNielson\Prez\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Console\ConfirmableTrait;
 use Illuminate\Filesystem\Filesystem;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
 class PresenterCommand extends Command
 {
-    use ConfirmableTrait;
-
     /**
      * The console command name.
      *

@@ -1,7 +1,5 @@
 <?php namespace RyanNielson\Prez;
 
-use RyanNielson\Prez\Exceptions\InvalidPresenterPresentsException;
-
 class Presenter
 {
     protected $object;
