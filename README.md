@@ -28,7 +28,6 @@ Presenters inherit from `RyanNielson\Prez\Presenter`, and should be named for th
 // app/presenters/UserPresenter.php
 class UserPresenter extends RyanNielson\Prez\Presenter 
 {
-
 }
 ```
 
