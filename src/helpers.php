@@ -2,7 +2,7 @@
 
 use RyanNielson\Prez\PresenterFinder;
 
-if (!function_exists('present'))
+if (!function_exists('presenter'))
 {
     function presenter($object, $klass = null)
     {
