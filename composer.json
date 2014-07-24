@@ -1,7 +1,7 @@
 {
     "name": "ryannielson/prez",
     "description": "Easily create presenters for your objects.",
-    "keywords": ["presenter", "decorator", "view", "model"],
+    "keywords": ["presenter", "decorator", "view", "model", "laravel"],
     "homepage": "https://github.com/RyanNielson/prez",
     "license": "MIT",
     "authors": [
