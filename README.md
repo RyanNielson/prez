@@ -18,8 +18,8 @@ Once complete, if using Laravel, you now have to add the the service provider to
 
 Imagine your application has a `User` model. With Prez, you'd create a matching `UserPresenter` class. This presenter wraps the model, dealing with only presentational concerns. This keeps any view related logic out of the model, while also helping you keep logic out of the view. In your controller, you wrap the model and hand that to the view instead of the model itself:
 
-```
-# app/controllers/UserController.php
+```php
+// app/controllers/UserController.php
 function show()
 {
   $user = presenter(User::find(Input::get('id')))
@@ -34,7 +34,7 @@ Now in your view you can use the `Presenter` in the same way you'd use the origi
 
 Presenters inherit from `RyanNielson\Prez\Presenter`, and should be named for the model they present. In Laravel these should live in the `app/presenters` directory.
 
-```
+```php
 // app/presenters/UserPresenter.php
 class UserPresenter extends RyanNielson\Prez\Presenter 
 {
@@ -56,7 +56,7 @@ To create a presenter called `UserPresenter` in `app/custom`:
 
 You can access the wrapped object in a presenter by using `$this->object`. This allows you get get any public property or call any public function on the object.
 
-```
+```php
 class UserPresenter extends RyanNielson\Prez\Presenter 
 {
     public function fullName()
@@ -68,7 +68,7 @@ class UserPresenter extends RyanNielson\Prez\Presenter
 
 You can also use the `presents` property on the presenter so that you can using a name other than `$this->object` to access the object. This makes the presenter code a bit more clear.
 
-```
+```php
 class UserPresenter extends RyanNielson\Prez\Presenter 
 {
     // This allows us to use $this->user instead of $this->object
@@ -85,7 +85,7 @@ class UserPresenter extends RyanNielson\Prez\Presenter
 
 If the presenter doesn't contain a property or method, the call is delegated to the wrapped object. This makes it so that if we want to access a field on the model, we don't have to write a function in the presenter.
 
-```
+```php
 class User
 {
     public $name = 'Ryan';
