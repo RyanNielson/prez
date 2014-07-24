@@ -1,6 +1,10 @@
 #Prez
 
 [![Build Status](https://travis-ci.org/RyanNielson/prez.svg?branch=master)](https://travis-ci.org/RyanNielson/prez)
+[![Total Downloads](https://poser.pugx.org/ryannielson/prez/downloads.svg)](https://packagist.org/packages/ryannielson/prez)
+[![Latest Stable Version](https://poser.pugx.org/ryannielson/prez/v/stable.svg)](https://packagist.org/packages/ryannielson/prez)
+[![Latest Unstable Version](https://poser.pugx.org/ryannielson/prez/v/unstable.svg)](https://packagist.org/packages/ryannielson/prez)
+[![License](https://poser.pugx.org/ryannielson/prez/license.svg)](https://packagist.org/packages/ryannielson/prez)
 
 Simple presenters for your PHP or Laravel project.
 
