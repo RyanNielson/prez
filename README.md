@@ -12,7 +12,7 @@ Imagine your application has a `User` model. With Prez, you'd create a matching 
 
 Run the following Composer command in your terminal, or simply add `'ryannielson/prez': '~1.0.0'` to your composer.json file:
 
-    composer require ryannielson/html-helper:'~1.0.0'
+    composer require ryannielson/prez:'~1.0.0'
 
 Once complete, if using Laravel, you now have to add the the service provider to the providers array in `app/config/app.php`: 
 
