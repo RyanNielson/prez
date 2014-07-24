@@ -47,9 +47,11 @@ class UserPresenter extends RyanNielson\Prez\Presenter
 Prez includes a command to automate the creation of Presenters. 
 
 To create a presenter called `UserPresenter` in `app/presenters`:
+
 `php artisan prez:presenter User`
 
 To create a presenter called `UserPresenter` in `app/custom`:
+
 `php artisan prez:presenter User --path=app/custom`
 
 ### Accessing the Object in a Presenter
@@ -79,6 +81,22 @@ class UserPresenter extends RyanNielson\Prez\Presenter
         return $this->user->firstName . ' ' . $this->user->lastName;
     }
 }
+```
+
+### Getting a Presenter for an Object
+
+By default, Prez assumes that your presenter class uses your object's class name followed by presenter. For example, an object with the class `User` is assumed to have a corresponding `UserPresenter` class. The `presenter` helper method uses this assumption to find your presenter and return an instance of it.
+
+```php
+$user = new User;
+$userPresenter = presenter($user); // Returns an instance of UserPresenter
+```
+
+`presenter` also takes an optional class name if you want to force a specific presenter to be used.
+
+```php
+$user = new User;
+$userPresenter = presenter($user, 'AdminPresenter'); // Returns an instance of AdminPresenter
 ```
 
 ### Using a Presenter in a View
