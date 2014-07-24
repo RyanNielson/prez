@@ -4,6 +4,10 @@
 
 Simple presenters for your PHP or Laravel project.
 
+## Why Should I Use Presenters?
+
+Imagine your application has a `User` model. With Prez, you'd create a matching `UserPresenter` class. This presenter wraps the model, dealing with only presentational concerns. This keeps any view related logic out of the model, while also helping you keep logic out of the view. In your view you can use the presenter in the same way you'd use the original model. Whenever you start thinking about creating a helper function or adding logic to your view, it might be worth moving it into a presenter.
+
 ## Installation
 
 Run the following Composer command in your terminal, or simply add `'ryannielson/prez': '~1.0.0'` to your composer.json file:
@@ -13,20 +17,6 @@ Run the following Composer command in your terminal, or simply add `'ryannielson
 Once complete, if using Laravel, you now have to add the the service provider to the providers array in `app/config/app.php`: 
 
     'RyanNielson\Prez\PrezServiceProvider'
-
-## Why Should I Use Presenters?
-
-Imagine your application has a `User` model. With Prez, you'd create a matching `UserPresenter` class. This presenter wraps the model, dealing with only presentational concerns. This keeps any view related logic out of the model, while also helping you keep logic out of the view. In your controller, you wrap the model and hand that to the view instead of the model itself:
-
-```php
-// app/controllers/UserController.php
-function show()
-{
-  $user = presenter(User::find(Input::get('id')))
-}
-```
-
-Now in your view you can use the `Presenter` in the same way you'd use the original model. Whenever you start thinking about creating a helper function or adding logic to your view, it might be worth moving it into the `Presenter`.
 
 ## Usage
 
@@ -97,6 +87,13 @@ $userPresenter = presenter($user); // Returns an instance of UserPresenter
 ```php
 $user = new User;
 $userPresenter = presenter($user, 'AdminPresenter'); // Returns an instance of AdminPresenter
+```
+
+If you prefer not to use the helper function, you can explicitily pass your object when constructing a presenter.
+
+```php
+$user = new User;
+$userPresenter = new UserPresenter($user);
 ```
 
 ### Using a Presenter in a View
