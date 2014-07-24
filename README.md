@@ -81,6 +81,15 @@ class UserPresenter extends RyanNielson\Prez\Presenter
 }
 ```
 
+### Using a Presenter in a View
+
+If you have a presenter object passed to your view, you can use your presenter like any other object. The following example assumes the usage of Laravel's blade template language.
+
+```php
+<!-- Assuming you have a $userPresenter available in the view. -->
+<h1>{{ $userPresenter->fullName() }}</h1>
+```
+
 ### Delegating to Object
 
 If the presenter doesn't contain a property or method, the call is delegated to the wrapped object. This makes it so that if we want to access a field on the model, we don't have to write a function in the presenter.
