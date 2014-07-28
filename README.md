@@ -14,7 +14,7 @@ Imagine your application has a `User` model. With Prez, you'd create a matching 
 
 ## Installation
 
-Run the following Composer command in your terminal, or simply add `'ryannielson/prez': '~1.0.0'` to your composer.json file:
+Run the following Composer command in your terminal, or simply add `"ryannielson/prez": "~1.0.0"` to your composer.json file:
 
     composer require ryannielson/prez:'~1.0.0'
 
