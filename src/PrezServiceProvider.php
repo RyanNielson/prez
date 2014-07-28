@@ -37,7 +37,7 @@ class PrezServiceProvider extends ServiceProvider
         $this->commands('prez.commands.presenter');
 
         ClassLoader::addDirectories([
-            app_path() . '/rules',
+            app_path() . '/presenters',
         ]);
     }
 
